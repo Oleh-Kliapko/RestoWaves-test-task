@@ -1,7 +1,7 @@
 const {
   product: { Product },
-} = require('../models');
-const { HttpError } = require('../helpers');
+} = require('../../models');
+const { HttpError } = require('../../helpers');
 
 module.exports = async (req, res) => {
   const { page, limit } = req.query;

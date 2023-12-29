@@ -1,4 +1,9 @@
 module.exports = key => {
+  const commonRules = {
+    'any.required': `Field "${key}" is required`,
+    'any.empty': `Field "${key}" can NOT be empty`,
+  };
+
   const textRules = {
     'string.empty': `Field "${key}" can NOT be empty`,
     'string.min': `${key} must have {#limit} and more characters`,
@@ -17,5 +22,5 @@ module.exports = key => {
     'boolean.base': `${key} must be a boolean`,
   };
 
-  return { textRules, numberRules, booleanRules };
+  return { textRules, numberRules, booleanRules, commonRules };
 };

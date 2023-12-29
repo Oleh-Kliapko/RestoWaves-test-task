@@ -1,7 +1,7 @@
 const {
   product: { Product },
-} = require('../models');
-const { notFoundMsg } = require('../helpers');
+} = require('../../models');
+const { notFoundMsg } = require('../../helpers');
 
 module.exports = async (req, res) => {
   const { id } = req.params;

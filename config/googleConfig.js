@@ -1,4 +1,4 @@
-const { SHEET_ID, SERVICE_KEY_ID, SERVICE_KEY } = process.env;
+const { SHEET_ID, SERVICE_KEY_ID, SERVICE_KEY, SERVICE_EMAIL } = process.env;
 
 module.exports = {
   googleSheetId: SHEET_ID,
@@ -7,7 +7,7 @@ module.exports = {
     project_id: 'restowaves',
     private_key_id: SERVICE_KEY_ID,
     private_key: SERVICE_KEY.split(String.raw`\n`).join('\n'),
-    client_email: 'ro300979koa@restowaves.iam.gserviceaccount.com',
+    client_email: SERVICE_EMAIL,
     client_id: '106711100168522986249',
     auth_uri: 'https://accounts.google.com/o/oauth2/auth',
     token_uri: 'https://oauth2.googleapis.com/token',

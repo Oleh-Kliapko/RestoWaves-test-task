@@ -13,8 +13,10 @@ const { saveGoogleSheetsInDB } = require('./controllers');
 mongoose
   .connect(DB_HOST)
   .then(() => {
+    // Schedule a cron job to periodically save data from Google Sheets to the database (once an hour)
     cron.schedule('0 * * * *', saveGoogleSheetsInDB);
 
+    // Start the HTTP server after successful database connection
     http.listen(PORT, () => {
       console.log('Database connection successful on port:', PORT);
     });

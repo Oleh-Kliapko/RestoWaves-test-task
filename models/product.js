@@ -3,17 +3,19 @@ const Joi = require('joi');
 
 const { handleMongooseError, validationRules } = require('../helpers');
 
+// Define Joi validation rules for brand
 const validationName = Joi.object({
-  brand: Joi.string()
-    .description('Brand name')
+  productModel: Joi.string()
+    .description('Product model name')
     .min(2)
     .max(50)
-    .messages(validationRules('Brand name').textRules),
+    .messages(validationRules('Product model name').textRules),
 });
 
-const modelSchema = new Schema(
+// Define Mongoose schema for the model
+const productSchema = new Schema(
   {
-    model: {
+    product: {
       type: String,
       required: true,
     },
@@ -30,19 +32,29 @@ const modelSchema = new Schema(
   { versionKey: false, timestamps: true },
 );
 
-const brandSchema = new Schema(
+// Define Mongoose schema for the brand, which includes an array of models
+const productModelSchema = new Schema(
   {
-    brand: {
+    productModel: {
       type: String,
       required: true,
     },
-    brandModels: [modelSchema],
+    productModelTypes: [productSchema],
+    brand: {
+      type: String,
+      default: '',
+    },
+    categories: [{ _id: Schema.Types.ObjectId, categoryName: String }],
+    subcategories: [{ _id: Schema.Types.ObjectId, subcategoryName: String }],
   },
   { versionKey: false, timestamps: true },
 );
 
-brandSchema.post('save', handleMongooseError);
-const Product = model('product', brandSchema);
+// Attach a post-save middleware to handle Mongoose errors
+productModelSchema.post('save', handleMongooseError);
+
+// Create a Mongoose model
+const Product = model('product', productModelSchema);
 
 module.exports = {
   Product,

@@ -11,20 +11,29 @@ const {
   product: { validationName },
 } = require('../models');
 
-router.get('/', checkPageLimit, ctrl.getAllProducts);
+// Define routes and associated middleware
+router.get(
+  '/',
+  checkPageLimit, // check that page or limit is number in body request
+  ctrl.getAllProducts,
+);
 
-router.get('/brandById/:id', isValidID, ctrl.getBrandById);
+router.get(
+  '/modelById/:id',
+  isValidID, // check that sended ID is Object ID of Mongo DB
+  ctrl.getProductModelById,
+);
 
-router.get('/getModel/:id', isValidID, ctrl.getModelById);
+router.get('/getModelType/:id', isValidID, ctrl.getModelTypeById);
 
-router.get('/bySize', ctrl.getModelBySize);
+router.get('/bySize', ctrl.getModelTypesBySize);
 
 router.patch(
   '/:id',
-  checkRequestBody,
+  checkRequestBody, // check that request contains a body
   isValidID,
-  validateBody(validationName),
-  ctrl.updateBrandNameById,
+  validateBody(validationName), // validate body using Joi
+  ctrl.updateProductModelNameById,
 );
 
 module.exports = router;
