@@ -1,0 +1,825 @@
+{
+	"info": {
+		"_postman_id": "8ecefdd2-db9d-4767-a360-7c2523a2ff27",
+		"name": "RestoWaves TEST TASK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16341868"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/products?page=1&limit=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product model by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/products/modelById/658f1d877999bd21e05b206f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"modelById",
+								"658f1d877999bd21e05b206f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get model type by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/products/getModelType/658f1e007999bd21e05b209c?modelTypeId=658f1e007999bd21e05b209d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"getModelType",
+								"658f1e007999bd21e05b209c"
+							],
+							"query": [
+								{
+									"key": "modelTypeId",
+									"value": "658f1e007999bd21e05b209d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get model types by Size",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/products/bySize?size=37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"bySize"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "37"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product model",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productModel\": \"Puma Sport\",\r\n   \"brand\": \"Puma\",\r\n   \"productModelTypes\":[\r\n        {\r\n        \"product\": \"Puma Sport First Step\",\r\n        \"code\": \"2222222\",\r\n        \"sizes\": [36, 42, 46],\r\n        \"categories\": [\"658f29d238f8212881754cf8\"],\r\n        \"subcategories\": [\"658f29d238f8212881754cf9\"]\r\n    }\r\n   ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new model type",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"ECO Soft v.13 Life \",\r\n    \"code\": \"12\",\r\n    \"price\": 900,\r\n    \"sizes\": [36, 42, 46],\r\n    \"categories\": [\"658f29d238f8212881754cf8\"],\r\n    \"subcategories\": [\"658f29d238f8212881754cf9\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/products/65900eca4845776d5707cd23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"65900eca4845776d5707cd23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product model fields",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productModel\": \"Nike Lebron, Jordan\",\r\n   \"brand\": \"Nike\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/products/model/658fd5859a376a0c93a8aef6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"model",
+								"658fd5859a376a0c93a8aef6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update model type fields by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"product\": \"JORDAN\",\r\n   \"price\": 7777,\r\n   \"categories\": [\"658f295c38f8212881754ce8\"],\r\n   \"subcategories\": [\"658f295c38f8212881754ce9\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/products/modelType/658fd5859a376a0c93a8aef6?modelTypeId=658fd5859a376a0c93a8aef7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"modelType",
+								"658fd5859a376a0c93a8aef6"
+							],
+							"query": [
+								{
+									"key": "modelTypeId",
+									"value": "658fd5859a376a0c93a8aef7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/categories?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/categories/658f2bec848457b4793f8b5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"658f2bec848457b4793f8b5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Чоботи\",\r\n    \"subcategories\": [\r\n        {\r\n            \"subcategoryName\": \"літнє\"\r\n        },\r\n        {\r\n            \"subcategoryName\": \"зимове\"\r\n        },\r\n                {\r\n            \"subcategoryName\": \"демісезонне\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Сандалі\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories/658f2c60a7f0e02e5c233491",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"658f2c60a7f0e02e5c233491"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/categories/658f2bec848457b4793f8b5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"658f2bec848457b4793f8b5c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Render.com",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products?page=1&limit=4",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product model by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/modelById/658f1d877999bd21e05b206f",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"modelById",
+								"658f1d877999bd21e05b206f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get model type by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/getModelType/658f1e007999bd21e05b209c?modelTypeId=658f1e007999bd21e05b209d",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getModelType",
+								"658f1e007999bd21e05b209c"
+							],
+							"query": [
+								{
+									"key": "modelTypeId",
+									"value": "658f1e007999bd21e05b209d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get model types by Siz",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/bySize?size=37",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"bySize"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "37"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product model",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productModel\": \"Puma Sport\",\r\n   \"brand\": \"Puma\",\r\n   \"productModelTypes\":[\r\n        {\r\n        \"product\": \"Puma Sport First Step\",\r\n        \"code\": \"2222222\",\r\n        \"sizes\": [36, 42, 46],\r\n        \"categories\": [\"658f29d238f8212881754cf8\"],\r\n        \"subcategories\": [\"658f29d238f8212881754cf9\"]\r\n    }\r\n   ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new model type",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"ECO Soft v.13 Life \",\r\n    \"code\": \"12\",\r\n    \"price\": 900,\r\n    \"sizes\": [36, 42, 46],\r\n    \"categories\": [\"658f29d238f8212881754cf8\"],\r\n    \"subcategories\": [\"658f29d238f8212881754cf9\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/65900eca4845776d5707cd23",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65900eca4845776d5707cd23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product model fields",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productModel\": \"Nike Lebron, Jordan\",\r\n   \"brand\": \"Nike\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/model/658fd5859a376a0c93a8aef6",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"model",
+								"658fd5859a376a0c93a8aef6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update model type fields by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"product\": \"JORDAN\",\r\n   \"price\": 7777,\r\n   \"categories\": [\"658f295c38f8212881754ce8\"],\r\n   \"subcategories\": [\"658f295c38f8212881754ce9\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/products/modelType/658fd5859a376a0c93a8aef6?modelTypeId=658fd5859a376a0c93a8aef7",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"modelType",
+								"658fd5859a376a0c93a8aef6"
+							],
+							"query": [
+								{
+									"key": "modelTypeId",
+									"value": "658fd5859a376a0c93a8aef7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/categories?page=1&limit=10",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/categories/658f2bec848457b4793f8b5c",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"658f2bec848457b4793f8b5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Чоботи\",\r\n    \"subcategories\": [\r\n        {\r\n            \"subcategoryName\": \"літнє\"\r\n        },\r\n        {\r\n            \"subcategoryName\": \"зимове\"\r\n        },\r\n                {\r\n            \"subcategoryName\": \"демісезонне\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Сандалі\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/categories/658f2c60a7f0e02e5c233491",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"658f2c60a7f0e02e5c233491"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://restowaves-backend.onrender.com/api/categories/658f2bec848457b4793f8b5c",
+							"protocol": "https",
+							"host": [
+								"restowaves-backend",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"658f2bec848457b4793f8b5c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

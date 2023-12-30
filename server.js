@@ -8,7 +8,7 @@ const http = require('http').Server(app);
 
 const { DB_HOST, PORT = 5000 } = process.env;
 
-const { saveGoogleSheetsInDB } = require('./controllers');
+const { saveGoogleSheetsInDB } = require('./services');
 
 mongoose
   .connect(DB_HOST)

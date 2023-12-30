@@ -7,11 +7,12 @@ module.exports = async (req, res) => {
 
   const allProducts = await Product.find({});
 
-  const productModels = allProducts.flatMap(model =>
+  // Find the model type within all product models and get model types with certain foot size
+  const modelTypes = allProducts.flatMap(model =>
     model.productModelTypes.filter(modelType =>
       modelType.sizes.some(item => item.toString() === size),
     ),
   );
 
-  res.status(200).json({ productModels, totalCount: productModels.length });
+  res.status(200).json({ modelTypes, totalCount: modelTypes.length });
 };

@@ -3,6 +3,7 @@ const Joi = require('joi');
 
 const { validationRules, handleMongooseError } = require('../helpers');
 
+// Define Joi validation rules for adding of category
 const validationAddCategory = Joi.object({
   categoryName: Joi.string()
     .description('Category name')
@@ -28,6 +29,7 @@ const validationAddCategory = Joi.object({
   ),
 });
 
+// Define Joi validation rules for updating of category
 const validationUpdateCategory = Joi.object({
   categoryName: Joi.string()
     .description('Category name')

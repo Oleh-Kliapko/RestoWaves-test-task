@@ -1,7 +1,7 @@
 {
   "name": "restowaves-test-task",
   "version": "1.0.0",
-  "description": "Back-end to manage shoes in the stock",
+  "description": "Back-end to manage common requests for shoes store",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js",

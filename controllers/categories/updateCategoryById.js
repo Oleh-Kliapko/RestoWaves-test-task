@@ -6,6 +6,7 @@ const { notFoundMsg } = require('../../helpers');
 module.exports = async (req, res) => {
   const { id } = req.params;
 
+  // Find a category and update according to request body
   const category = await Category.findByIdAndUpdate(id, req.body, {
     new: true,
   });

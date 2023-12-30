@@ -8,7 +8,6 @@ module.exports = async (req, res) => {
   const skip = Math.max((parseInt(page, 10) - 1) * parseInt(limit, 10), 0);
 
   const allProducts = await Product.find({});
-
   if (!allProducts) {
     throw HttpError(404, 'Products not found');
   }

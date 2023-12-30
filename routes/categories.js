@@ -8,6 +8,7 @@ const {
 
 const router = express.Router();
 
+// Define routes and associated middleware
 router.get('/', ctrl.getAllCategories);
 router.get('/:id', isValidID, ctrl.getCategoryById);
 
