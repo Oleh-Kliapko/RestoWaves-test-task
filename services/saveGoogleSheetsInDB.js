@@ -2,7 +2,7 @@ const {
   product: { Product },
 } = require('../models');
 
-const { fetchDataFromGoogleSheets } = require('.');
+const fetchDataFromGoogleSheets = require('./fetchDataFromGoogleSheets');
 
 module.exports = async () => {
   // Fetch data from Google Sheets
