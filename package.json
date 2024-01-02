@@ -5,6 +5,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "devpg": "cross-env NODE_ENV=development nodemon serverPG.js",
     "lint": "eslint --max-warnings 0 \"**/*.js\"",
     "lint:fix": "eslint --fix ./**/*.js",
     "lint-staged:fix": "npm run lint-staged && git add -A && git reset HEAD"
@@ -41,7 +42,8 @@
     "mongoose": "^7.6.7",
     "morgan": "^1.10.0",
     "nanoid": "^3.3.4",
-    "node-cron": "^3.0.3"
+    "node-cron": "^3.0.3",
+    "pg": "^8.11.3"
   },
   "eslintIgnore": [
     "node_modules"

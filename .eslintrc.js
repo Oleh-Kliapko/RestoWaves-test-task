@@ -23,7 +23,7 @@ module.exports = {
     camelcase: [
       'error',
       {
-        allow: ['_id', '_key', '_email', '_uri', '_url', '_domain'],
+        allow: ['_id', '_key', '_email', '_uri', '_url', '_domain', '_name'],
       },
     ],
   },

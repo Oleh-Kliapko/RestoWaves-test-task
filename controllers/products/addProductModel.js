@@ -1,6 +1,5 @@
 const {
   product: { Product },
-  category: { Category },
 } = require('../../models');
 const { HttpError } = require('../../helpers');
 const checkExistingCategoriesIDs = require('../../helpers/checkExistingCategoriesIDs');
