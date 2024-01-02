@@ -10,6 +10,7 @@
 - [Mongoose](https://mongoosejs.com/docs/guide.html) - з метою моделювання
   об’єктів mongodb для node.js
 - [MongoDB](https://www.mongodb.com/) - програма для баз даних NoSQL
+- [PostgreSQL](https://www.postgresql.org/docs/) - реляційна база даних PostgreSQL
 - деплой-сервер - [deploy server](https://restowaves-backend.onrender.com)
 
 - додаткові пакети:
